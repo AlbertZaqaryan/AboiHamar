@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AG shop</title>
+    <a href="{% url 'home' %}"><Button>HOME</Button></a>
+    {% for i in cats %}
+        <a href="{% url 'home-detail' i.id %}"><Button>{{ i.name }}</Button></a>
+    {% endfor %}
+    <hr>
+</head>
+<body>
+    {% block content %}{% endblock %}
+</body>
+<hr>
+<footer>
+    <ul>
+        <li>Home</li>
+        <li>Contact</li>
+        <li>+37444355225</li>
+        <li>Company</li>
+    </ul>
+</footer>
+
+</html>

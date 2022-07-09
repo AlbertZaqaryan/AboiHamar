@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for i in category %}
+        {% for j in i.catprod.all %}
+            <h1>{{ j.name }}</h1>
+            <p>{{ j.price }}</p>
+            <img src="{{ j.img.url }}" width="300px" alt="">
+        {% endfor %}
+    {% endfor %}
+
+{% endblock %}
+    
