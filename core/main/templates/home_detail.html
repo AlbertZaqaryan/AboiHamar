@@ -5,7 +5,7 @@
         {% for j in i.brandprod.all %}
             <h1>{{ j.name }}</h1>
             <p>{{ j.price }}</p>
-            <img src="{{ j.img.url }}" width="300px" alt="">
+            <a href="{% url 'home_detail_detail' j.id %}"><img src="{{ j.img.url }}" width="300px" alt=""></a>
         {% endfor %}
     {% endfor %}
 

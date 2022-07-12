@@ -25,3 +25,10 @@ class CategoryListView(ListView):
     def get(self, request, id):
         category = Brand.objects.filter(pk=id)
         return render(request, self.template_name, {'id':id, 'category':category})
+
+class CategoryDetailView(DetailView):
+    template_name = 'home_detail_detail.html'
+
+    def get(self, request, id):
+        prod = Prod.objects.get(pk=id)
+        return render(request, self.template_name, {'prod':prod})
