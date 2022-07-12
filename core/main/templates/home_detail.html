@@ -2,7 +2,7 @@
 
 {% block content %}
     {% for i in category %}
-        {% for j in i.catprod.all %}
+        {% for j in i.brandprod.all %}
             <h1>{{ j.name }}</h1>
             <p>{{ j.price }}</p>
             <img src="{{ j.img.url }}" width="300px" alt="">

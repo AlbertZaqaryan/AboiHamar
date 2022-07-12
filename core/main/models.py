@@ -12,8 +12,21 @@ class Category(models.Model):
         verbose_name = 'Category'
         verbose_name_plural = 'Categories'
 
+
+class Brand(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='catbrand')
+    name = models.CharField('Brand name', max_length=30)
+    
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Brand'
+        verbose_name_plural = 'Brands'
+
+
 class Prod(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='catprod')
+    brand = models.ForeignKey(Brand, on_delete=models.CASCADE, related_name='brandprod', null=True)
     name = models.CharField('Prod name', max_length=50)
     price = models.IntegerField('Prod price')
     img = models.ImageField('Prod image', upload_to='media')

@@ -7,7 +7,7 @@
     <title>AG shop</title>
     <a href="{% url 'home' %}"><Button>HOME</Button></a>
     {% for i in cats %}
-        <a href="{% url 'home-detail' i.id %}"><Button>{{ i.name }}</Button></a>
+        <a href="{% url 'brand' i.id %}"><Button>{{ i.name }}</Button></a>
     {% endfor %}
     <hr>
 </head>
