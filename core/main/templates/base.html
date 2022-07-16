@@ -9,6 +9,12 @@
     {% for i in cats %}
         <a href="{% url 'brand' i.id %}"><Button>{{ i.name }}</Button></a>
     {% endfor %}
+    {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}"><Button>{{ user.username }} Logout!</Button></a>
+    {% else %}
+        <a href="{% url 'login' %}"><Button>Login</Button></a>
+        <a href="{% url 'register' %}"><Button>Register</Button></a>
+    {% endif %}
     <hr>
 </head>
 <body>
